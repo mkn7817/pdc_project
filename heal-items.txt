@@ -1,0 +1,3 @@
+First Aid Kit,30
+First Aid Kit Plus,80
+Propital,300

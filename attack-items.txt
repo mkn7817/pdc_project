@@ -1,0 +1,3 @@
+F1 Grenade,80
+RGB Grenade,140
+Vog-25,1000
