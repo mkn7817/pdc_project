@@ -9,7 +9,10 @@ import Characters.Boss;
 import Characters.Player;
 import Gameplay.Battle;
 import static Gameplay.GameSequence.bossNumber;
+import Items.AmmoDBManager;
+import Items.AmmoDBOperations;
 import Items.Ammunition;
+import Items.AmmunitionDBMap;
 import Items.AmmunitionMap;
 import Items.AttackItem;
 import Items.HealItem;
@@ -28,23 +31,34 @@ public class TestMain {
      */
     public static void main(String[] args) throws IOException {
         
-        Player p = new Player("V", 1000, 10, 10, 10);
-        Item gren = new AttackItem("gren", 100);
-        p.addItemObject(gren);
-        p.addItemObject(gren);
-        Weapon w = new Weapon("weapon", "type", 1, "cal", 1);
-//        Ammunition am = new Ammunition("type", "code", 50, 0.5);
-//        w.addAmmunition(am);
-        p.setWeapon(w);
+//        Player p = new Player("V", 1000, 10, 10, 10);
+//        Item gren = new AttackItem("gren", 100);
+//        p.addItemObject(gren);
+//        p.addItemObject(gren);
+//        Weapon w = new Weapon("weapon", "type", 1, "cal", 1);
+////        Ammunition am = new Ammunition("type", "code", 50, 0.5);
+////        w.addAmmunition(am);
+//        p.setWeapon(w);
+//        
+//        AmmunitionMap am = new AmmunitionMap();
+//        Ammunition ammo;
+//        am.populateAmmoMapAr();
+//        
+//        ammo = am.getAmmo("AP");
+//        
+//        
+//        System.out.println(ammo.getAmmoCode());
         
-        AmmunitionMap am = new AmmunitionMap();
-        Ammunition ammo;
-        am.populateAmmoMapAr();
-        
-        ammo = am.getAmmo("AP");
         
         
-        System.out.println(ammo.getAmmoCode());
+        AmmoDBManager adbm = new AmmoDBManager();
+        AmmoDBOperations adbo = new AmmoDBOperations();
+        
+        adbo.createTableSmg();
+        
+        AmmunitionDBMap ammap = new AmmunitionDBMap();
+        ammap.getSmgAmmo();
+        
 /*
         ChoiceListener cl = new ChoiceListener();//listener class for UI interactions
         GUI ui = new GUI(cl);//GUI class takes in listener class

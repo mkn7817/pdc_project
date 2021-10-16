@@ -1,0 +1,40 @@
+Sat Oct 16 17:43:06 NZDT 2021 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Sat Oct 16 17:43:09 NZDT 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-017c-8769-2249-000035aba88e 
+on database directory C:\Users\User\Documents\NetBeansProjects\GameGUI\database\CarDB with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+Loaded from file:/D:/Derby/db-derby-10.14.2.0-bin(4)/db-derby-10.14.2.0-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_291-b10
+user.dir=D:\Derby\db-derby-10.14.2.0-bin(4)\db-derby-10.14.2.0-bin
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\User\Documents\NetBeansProjects\GameGUI\database
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Oct 16 17:46:25 NZDT 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance 67bb80b4-017c-8769-2249-000035aba88e 
+on database directory C:\Users\User\Documents\NetBeansProjects\GameGUI\database\PDC with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+Loaded from file:/D:/Derby/db-derby-10.14.2.0-bin(4)/db-derby-10.14.2.0-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_291-b10
+user.dir=D:\Derby\db-derby-10.14.2.0-bin(4)\db-derby-10.14.2.0-bin
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\User\Documents\NetBeansProjects\GameGUI\database
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Oct 16 18:15:37 NZDT 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance 109f00b9-017c-8769-2249-000035aba88e 
+on database directory C:\Users\User\Documents\NetBeansProjects\GameGUI\database\pdc-project-database with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+Loaded from file:/D:/Derby/db-derby-10.14.2.0-bin(4)/db-derby-10.14.2.0-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_291-b10
+user.dir=D:\Derby\db-derby-10.14.2.0-bin(4)\db-derby-10.14.2.0-bin
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\User\Documents\NetBeansProjects\GameGUI\database
+Database Class Loader started - derby.database.classpath=''

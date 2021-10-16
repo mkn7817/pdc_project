@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sat Oct 16 18:24:45 NZDT 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-017c-878f-441a-00000ec8a1a8 
+on database directory C:\Users\User\Documents\NetBeansProjects\GameGUI\PDC with class loader sun.misc.Launcher$AppClassLoader@5c647e05 
+Loaded from file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_291-b10
+user.dir=C:\Users\User\Documents\NetBeansProjects\GameGUI
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
