@@ -46,7 +46,7 @@ public class Ammunition {
         
     public String toString()
     {
-        String str = getAmmoType()+getAmmoCode();
+        String str = getAmmoType()+" "+getAmmoCode();
         
         return str;
     }

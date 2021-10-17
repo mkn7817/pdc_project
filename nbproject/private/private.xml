@@ -5,18 +5,16 @@
         <group>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/gamegui/GUIManager.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/gamegui/GameGUI.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Items/AmmunitionMap.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/database/AmmoDBManager.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Characters/Player.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Items/Ammunition.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Gameplay/Battle.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Gameplay/RunGame.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Characters/PlayerBattle.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Characters/Boss.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Characters/BossList.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/database/AmmunitionMap.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Gameplay/GameSequence.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Characters/CreateCharacter.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/database/AmmoDBOperations.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/gamegui/GUI.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/gamegui/TestMain.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/database/AmmunitionDBMap.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Items/Weapon.java</file>
         </group>
     </open-files>

@@ -9,16 +9,18 @@ import Characters.Boss;
 import Characters.Player;
 import Gameplay.Battle;
 import static Gameplay.GameSequence.bossNumber;
-import Items.AmmoDBManager;
-import Items.AmmoDBOperations;
+import database.AmmoDBManager;
+import database.AmmoDBOperations;
 import Items.Ammunition;
-import Items.AmmunitionDBMap;
-import Items.AmmunitionMap;
+import database.AmmunitionDBMap;
+import database.AmmunitionMap;
 import Items.AttackItem;
 import Items.HealItem;
 import Items.Item;
 import Items.Weapon;
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  *
@@ -54,10 +56,19 @@ public class TestMain {
         AmmoDBManager adbm = new AmmoDBManager();
         AmmoDBOperations adbo = new AmmoDBOperations();
         
-        adbo.createTableSmg();
+//        adbo.createTableSmg();
         
-        AmmunitionDBMap ammap = new AmmunitionDBMap();
-        ammap.getSmgAmmo();
+        AmmunitionDBMap ammapsmg = new AmmunitionDBMap();
+        AmmunitionDBMap ammapar = new AmmunitionDBMap();
+        AmmunitionDBMap ammapsr = new AmmunitionDBMap();
+        ammapsmg.getSmgAmmo();
+        
+        System.out.println(ammapsmg.getAmmo("FMJ"));
+//        ammapar.getArAmmo();
+//        ammapsr.getSrAmmo();
+//        System.out.println(ammapsmg);
+//        System.out.println(ammapar);
+//        System.out.println(ammapsr);
         
 /*
         ChoiceListener cl = new ChoiceListener();//listener class for UI interactions
