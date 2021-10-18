@@ -30,7 +30,7 @@ public class ChoiceListener implements ActionListener {
                 break;
             case "choice3": ui.setMultiChoiceString("choice3"); System.out.println("choice3");
                 break;
-            case "confirm": ui.setTextFieldString(ui.textField.getText()); System.out.println(ui.getTextFieldString()+"confirm button worked");
+            case "confirm": ui.setTextFieldString(ui.textField.getText()); //System.out.println(ui.getTextFieldString()+"confirm button worked");
                 break;
             case "item1": ui.setMultiChoiceString("item1");
                 break;
@@ -46,6 +46,10 @@ public class ChoiceListener implements ActionListener {
                 break;
             case "closebag": ui.setMultiChoiceString("closebag");
                 break;
+            case "reset": ui.setReset(true);
+                break;
+            
+            
         }
     }
     

@@ -412,6 +412,7 @@ public class GameSequence {
         b.populateBossList();
         
         while(p.isAlive() && game == true){
+        ui.setReset(false);
         
         woodsFirstPhase(p, ui, gm);
         
@@ -471,9 +472,14 @@ public class GameSequence {
             ui.setTextArea("Game Over: You died...");
         
         ui.addToText("Click confrim to exit");
+        ui.addToText(Battle.count+" battles fought");
         ui.setTextFieldString("");
+        
+        BattleRecord br = new BattleRecord(p);
+        br.addToLog();
         gm.getInputConfirm();
         System.exit(0);
     }
+    
     
 }

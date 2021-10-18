@@ -53,34 +53,35 @@ public class TestMain {
         
         
         
-        AmmoDBManager adbm = new AmmoDBManager();
-        AmmoDBOperations adbo = new AmmoDBOperations();
-        
-//        adbo.createTableSmg();
-        
-        AmmunitionDBMap ammapsmg = new AmmunitionDBMap();
-        AmmunitionDBMap ammapar = new AmmunitionDBMap();
-        AmmunitionDBMap ammapsr = new AmmunitionDBMap();
-        ammapsmg.getSmgAmmo();
-        
-        System.out.println(ammapsmg.getAmmo("FMJ"));
+//        AmmoDBManager adbm = new AmmoDBManager();
+//        AmmoDBOperations adbo = new AmmoDBOperations();
+//        
+////        adbo.createTableSmg();
+//        
+//        AmmunitionDBMap ammapsmg = new AmmunitionDBMap();
+//        AmmunitionDBMap ammapar = new AmmunitionDBMap();
+//        AmmunitionDBMap ammapsr = new AmmunitionDBMap();
+//        ammapsmg.getSmgAmmo();
+//        
+//        System.out.println(ammapsmg.getAmmo("FMJ"));
 //        ammapar.getArAmmo();
 //        ammapsr.getSrAmmo();
 //        System.out.println(ammapsmg);
 //        System.out.println(ammapar);
 //        System.out.println(ammapsr);
         
-/*
+
         ChoiceListener cl = new ChoiceListener();//listener class for UI interactions
         GUI ui = new GUI(cl);//GUI class takes in listener class
         cl.getUI(ui);
         GUIManager gm = new GUIManager(ui);//Manager takes GUI object
         
         
-        gm.displayBattleCommands();
-        gm.toggleBattleScreen();
-        gm.toggleMultiChoice();
+//        gm.displayBattleCommands();
+//        gm.toggleBattleScreen();
+//        gm.toggleMultiChoice();
         
+        /*
 //        String str = "";
 //        if(str.isEmpty())
 //            System.out.println("empty");

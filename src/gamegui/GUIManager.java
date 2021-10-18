@@ -20,6 +20,7 @@ public class GUIManager {
     
     GUI ui;
     
+    
     public GUIManager(GUI ui)
     {
         this.ui = ui;
@@ -251,7 +252,6 @@ public class GUIManager {
         ui.bossHP.repaint();
     }
     
-
     
     //displays battle commands
     public void displayBattleCommands()

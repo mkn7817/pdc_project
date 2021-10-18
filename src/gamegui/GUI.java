@@ -37,6 +37,7 @@ public class GUI {
     public JButton button1;
     public JButton button2;
     public JButton button3;
+    public JButton resetButton;
     public JPanel buttonPanel;
     
     public JTextArea textBox;//game text
@@ -61,6 +62,8 @@ public class GUI {
     public JPanel itemPanel;
     public JButton item1, item2, item3, item4, item5, item6, closeBag;
     public ArrayList<JButton> itemButtonList;
+    
+    public boolean reset = false;
     
     private String textFieldString;
     private String multiChoiceString;
@@ -90,6 +93,16 @@ public class GUI {
         textBox.setWrapStyleWord(true);
 //        textBox.setLineWrap(true);
 //        textBox.setWrapStyleWord(true);
+        
+        //reset button
+//        resetButton = new JButton();
+//        resetButton.setBounds(640, 460, 100, 40);
+//        resetButton.setBackground(Color.black);
+//        resetButton.setForeground(Color.white);
+//        resetButton.setText("RESET");
+//        resetButton.addActionListener(cl);
+//        resetButton.setActionCommand("reset");
+//        resetButton.setVisible(true);
         
         //confirm button
         confirmButton = new JButton();
@@ -242,6 +255,7 @@ public class GUI {
         textField.setBounds(40, 500, 600, 40);
         textField.setBackground(Color.white);
         
+//        frame.add(resetButton);
         frame.add(itemPanel);
         frame.add(confirmButton);
         frame.add(textBox);        
@@ -341,9 +355,14 @@ public class GUI {
         
     }
     
-    public void battleScreen()
+    public void setReset(boolean b)
     {
-        ;
+        this.reset = b;
+    }
+    
+    public boolean getReset()
+    {
+        return this.reset;
     }
     
     public void setTextArea(String s)

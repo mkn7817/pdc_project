@@ -21,6 +21,13 @@ public class Battle {
     Boss b;
     GUI ui;
     GUIManager gm;
+    //counters for stat tracking and balance adjustment on analytics
+    public static int count;//counter for number of battles in game
+    public static int damageReceived;//keeps track of damage received sum
+    public static int damageInflicted;//sum of damage dealt by player
+    public static int playerMisses;//sum of player attacks that miss
+    public static int aiMisses;//boss attacks that miss
+    
     
     public Battle()
     {
@@ -39,7 +46,7 @@ public class Battle {
     
     public void runBattle2()
     {
-        
+        count++;
 //        gm.setMultiChoiceText("Attack", "Items", "Defend");
         gm.displayBattleCommands();
         gm.toggleBattleScreen();
@@ -67,11 +74,14 @@ public class Battle {
             {
                 int i = ba.attack();
                 ui.addToText("You dealt "+i+" damage");
+                damageInflicted+=i;
                 b.setHp(b.getCurrentHP() - i);
                 if(b.getCurrentHP() < 0)
                     b.setHp(0);
                 gm.updateBossGUI(b.getName(), b.getCurrentHP());
                 ui.setMultiChoiceString("");
+                if(i == 0)
+                    playerMisses++;
                 requestStop = true;
             }
             else if(ui.getMultiChoiceString().equals("choice2") && p.getNumItems() != 0)
@@ -88,11 +98,12 @@ public class Battle {
                 System.out.println("TEST "+p.getItem(ui.itemButtonList.indexOf(ui.getMultiChoiceString())+1));
                 p.consumeItem(ui.itemButtonList.indexOf(ui.getMultiChoiceString())+1);
                 
-                
-                
                 gm.toggleMultiChoice();
                 ui.itemPanel.setVisible(false);
                 
+                
+                
+                ui.setMultiChoiceString("");
                 requestStop = true;
                 
             }
@@ -134,8 +145,8 @@ public class Battle {
             if(p.getDefense() == true)
             {
                 p.setHp(p.getCurrentHP() - 30);
-                
                 gm.updatePlayerDetails(p);
+                damageReceived += 30;
             ui.addToText("They throw a grenade dealing 30 damage");
             }
             else
@@ -143,6 +154,7 @@ public class Battle {
                 p.setHp(p.getCurrentHP() - 60);
                 gm.updatePlayerDetails(p);
                 ui.addToText("They throw a grenade dealing 60 damage");
+                damageReceived += 60;
             }
         }
         else
@@ -152,13 +164,20 @@ public class Battle {
             if(b.getAccuracy() > accCheck)
             {
                 System.out.println("if accessed");
-                if(p.getDefense() == true)
-                System.out.println("The shot hits you dealing "+(b.getBaseDmg())+" damage");
+                if(p.getDefense() == true){
+                System.out.println("The shot hits you dealing "+(b.getBaseDmg()/2)+" damage");
+                ui.addToText("The shot hits you dealing "+(b.getBaseDmg()/2)+" damage");
+                gm.updatePlayerDetails(p);
+                damageReceived += b.getBaseDmg();
+            }
+                else {
                 ui.addToText("The shot hits you dealing "+(b.getBaseDmg())+" damage");
                 p.setHp(p.getCurrentHP() - (b.getBaseDmg()));
                 gm.updatePlayerDetails(p);
+                damageReceived += b.getBaseDmg();
+                }
             }
-            else ui.addToText("The shot misses");
+            else ui.addToText("The shot misses"); aiMisses++;
         }
         if(p.getCurrentHP() <= 0)
         {
@@ -198,16 +217,17 @@ public class Battle {
     }
    
        
-    public void run() {
-        Battle battle = new Battle();
-        gm.toggleBattleScreen();
+//    public void run() {
+//        Battle battle = new Battle();
+//        gm.toggleBattleScreen();
+//        
+//        Thread p1 = new Thread();
+//        Thread b1 = new Thread();
+//        
+//        p1.start();
+//    }
         
-        Thread p1 = new Thread();
-        Thread b1 = new Thread();
-        
-        p1.start();
-    }
-        
+    
     
 
 }
