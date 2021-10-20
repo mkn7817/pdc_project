@@ -245,9 +245,7 @@ public class GUIManager {
     //displays battle commands
     public void displayBattleCommands()
     {
-//        toggleMultiChoice();
         setMultiChoiceText("Attack", "Use Item", "Defend");
-        System.out.println("TEST displayCommands()");
     }
    
 }

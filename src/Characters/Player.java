@@ -18,12 +18,10 @@ import java.util.Scanner;
 public class Player extends Character {
 
 
-//    Scanner scan = new Scanner(System.in);
     Random rand = new Random();
     
     private int str;//strength - affects melee damage
     private int dex;//dexterity - affects accuracy and evasion
-//    String nameInput;
     private Weapon weapon;
     private ArrayList<Item> backpack = new ArrayList<>(6);//array for storing items size 6
     private boolean defense;
@@ -72,7 +70,7 @@ public class Player extends Character {
         return this.defense;
     }
     
-        //prints all equipment held by player
+    //prints all equipment held by player
     public String listEquipment()
     {
         Iterator<Item> it = backpack.iterator();

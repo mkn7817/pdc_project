@@ -33,21 +33,6 @@ public class Boss extends Character {
         this.accuracy = accuracy;
         
     }
-
-
-//    public int attack() {
-//        Random rand = new Random();
-//        
-//        if (rand.nextDouble() > this.getAccuracy())
-//        {
-//            System.out.println(this.getName()+" missed their shot!");
-//            return 0;
-//        }
-//        else return this.baseDmg;       
-////        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-    
-    
     
     public String printStats()
     {
@@ -57,11 +42,13 @@ public class Boss extends Character {
         return str;
     }
     
+    //returns boss accuracy for hit or miss in battle
     public double getAccuracy()
     {
         return this.accuracy;
     }
     
+    //returns damage amount boss does in battle
     public int getBaseDmg()
     {
         return this.baseDmg;

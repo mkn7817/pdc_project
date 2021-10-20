@@ -42,14 +42,13 @@ public class Battle {
         this.b = b;
         this.ui = ui;
         this.gm = gm;
-        
-//        runBattle();
+     
     }
     
     public void runBattle2()
     {
         count++;
-//        gm.setMultiChoiceText("Attack", "Items", "Defend");
+        
         gm.displayBattleCommands();
         gm.toggleBattleScreen();
         PlayerBattle ba = new PlayerBattle(p, ui, gm);
@@ -57,25 +56,20 @@ public class Battle {
         boolean bIsAlive = true;
         boolean pIsAlive = true;
         gm.updateBossGUI(b.getName(), b.getCurrentHP());
-        System.out.println("battle begins");
-        do{
-        System.out.println("running battle");
-//        ba.playerTurn();
 
-        
+        do{
             boolean requestStop = false;
-            
 
         while(!requestStop)
         {
-//            displayCommands();
+            ui.addToText("Select your action");
             if(pIsAlive == true){
             gm.getInput();
             
             if(ui.getMultiChoiceString().equals("choice1"))
             {
                 int i = ba.attack();
-                ui.addToText("You dealt "+i+" damage");
+                ui.addToText("You dealt "+i+" damage in "+p.weaponHitsPerTurn()+" hits");
                 damageInflicted+=i;
                 b.setHp(b.getCurrentHP() - i);
                 if(b.getCurrentHP() < 0)
@@ -90,16 +84,15 @@ public class Battle {
             {
                 ArrayList<Item> bp = p.getBackpack();
                 Item i;
-                int itemIdex;
+//                int itemIdex;
                 ui.setMultiChoiceString("");
                 ba.openBackpack();
                 gm.toggleMultiChoice();
                 gm.getInput();
                 ba.clearButtonList();
-//                itemIndex = ui.itemButtonList.indexOf(ui.getMultiChoiceString());
-                System.out.println(ui.itemButtonList.indexOf(ui.getMultiChoiceString()));
+
                 i = p.getItem(ui.itemButtonList.indexOf(ui.getMultiChoiceString())+1);
-                System.out.println("TEST "+p.getItem(ui.itemButtonList.indexOf(ui.getMultiChoiceString())+1));
+
                 p.consumeItem(ui.itemButtonList.indexOf(ui.getMultiChoiceString())+1);
                 if(i instanceof HealItem)
                 {
@@ -132,7 +125,7 @@ public class Battle {
             else requestStop = true;
         }
         }
-        System.out.println("Player turn ended");
+
         if(b.getCurrentHP() <= 0)
         {
             bIsAlive = false;
@@ -145,21 +138,20 @@ public class Battle {
             double grenadeThrow = rand.nextDouble();//chance for boss to use special attack
             ui.addToText("The boss attacks");
         
-        System.out.println("running battle");
         if(b.getCurrentHP() < 0.2*b.getMaxHP())
-            {
-                System.out.println("Has used heal");
-                ui.addToText("They healed");
-                b.setHp(b.getCurrentHP() + 30);
-                gm.updateBossGUI(b.getName(), b.getCurrentHP());
-            }
+        {
+            ui.addToText("They healed");
+            b.setHp(b.getCurrentHP() + 30);
+            gm.updateBossGUI(b.getName(), b.getCurrentHP());
+        }
         else if(grenadeThrow < 0.1)
         {
-            System.out.println("They throw a grenade which deals 60 damage to you");
 
             if(p.getDefense() == true)
             {
                 p.setHp(p.getCurrentHP() - 30);
+                if(p.getCurrentHP()< 0)
+                    p.setHp(0);
                 gm.updatePlayerDetails(p);
                 damageReceived += 30;
             ui.addToText("They throw a grenade dealing 30 damage");
@@ -167,6 +159,8 @@ public class Battle {
             else
             {
                 p.setHp(p.getCurrentHP() - 60);
+                if(p.getCurrentHP()< 0)
+                    p.setHp(0);
                 gm.updatePlayerDetails(p);
                 ui.addToText("They throw a grenade dealing 60 damage");
                 damageReceived += 60;
@@ -174,20 +168,22 @@ public class Battle {
         }
         else
         {
-            System.out.println("They fire a shot");
             ui.setTextArea("They fire a shot");
             if(b.getAccuracy() > accCheck)
             {
-                System.out.println("if accessed");
                 if(p.getDefense() == true){
-                System.out.println("The shot hits you dealing "+(b.getBaseDmg()/2)+" damage");
                 ui.addToText("The shot hits you dealing "+(b.getBaseDmg()/2)+" damage");
+                p.setHp(p.getCurrentHP() - (b.getBaseDmg()/2));
+                if(p.getCurrentHP()< 0)
+                    p.setHp(0);
                 gm.updatePlayerDetails(p);
                 damageReceived += b.getBaseDmg();
-            }
+                }
                 else {
                 ui.addToText("The shot hits you dealing "+(b.getBaseDmg())+" damage");
                 p.setHp(p.getCurrentHP() - (b.getBaseDmg()));
+                if(p.getCurrentHP()< 0)
+                    p.setHp(0);
                 gm.updatePlayerDetails(p);
                 damageReceived += b.getBaseDmg();
                 }
@@ -221,10 +217,9 @@ public class Battle {
         while(flag)
         {
             gm.getInputConfirm();
-            if(!ui.getTextFieldString().equals("")){
-                
-                flag = false;
-                System.out.println(flag+"flag");
+            if(!ui.getTextFieldString().equals(""))
+            {
+               flag = false;
             }
         }
         gm.toggleBattleScreen();

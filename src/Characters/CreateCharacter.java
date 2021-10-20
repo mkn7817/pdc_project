@@ -45,24 +45,13 @@ public class CreateCharacter {
     
     ui.textField.setText("0");
     ui.setTextFieldString(null);
-//    ui.playerName.setText(nameInput);
-//    ui.playerHP.setText(p.getCurrentHP()+"/"+p.getMaxHP()+" Hit Points");
-
-
-    System.out.println(nameInput);
 
     p.setStr(rand.nextInt(9)+1);
     p.setDex(rand.nextInt(9)+1);
     p.setName(nameInput);
 
-
-//    ui.textBox.setText("Enter which weapon you would like to use. Enter number and click confirm\n");
     ui.textBox.setText("Click which weapon you would like to use.\nMP5 submachine gun (shoots 3 bullets per turn)\nAK-74M Assault Rifle (Shoots 2 bullets per turn)\n700 Remington Sniper Rifle(shoots 1 bullet per turn)\n");
     
-//    System.out.println("Enter which weapon you would like to use");
-//    System.out.print("1. MP5 submachine gun (shoots 3 bullets per turn)\n2. AK-74M Assault Rifle (Shoots 2 bullets per turn)\n3. 700 Remington Sniper Rifle(shoots 1 bullet per turn)\n");
-    
-
     gm.toggleTextField();
     gm.toggleMultiChoice();
     gm.setMultiChoiceText("MP5 (smg)", "AK-74 (assault rifle)", "M700 Rem. (sniper)");
@@ -76,7 +65,7 @@ public class CreateCharacter {
             System.out.println("loop accessed");
         }
     }while(!cont2);
-    System.out.println("finished loop");
+    
     switch(weapChoice)
     {
         case "choice1":
@@ -103,6 +92,7 @@ public class CreateCharacter {
     
     }
     
+    //updates GUI with player details
     ui.playerWeapon.setText(p.getWeaponName());//
     ui.playerAmmo.setText(p.getAmmoCode());
     gm.updatePlayerGUI(p);

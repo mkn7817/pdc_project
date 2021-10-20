@@ -110,9 +110,6 @@ public class AmmunitionDBMap {
                 int damage = rs.getInt(4);
                 double fragchance = rs.getDouble(5);
                 
-                System.out.println(type+" "+code+" "+damage+" "+fragchance+"");
-//                Ammunition ammo = new Ammunition(type, code, damage, fragchance);
-                
                 ammoMap.put(code, new Ammunition(type, code, damage, fragchance));
             }
 

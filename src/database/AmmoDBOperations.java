@@ -5,15 +5,11 @@
  */
 package database;
 
-import Items.Ammunition;
-import java.io.BufferedReader;
-import java.io.FileReader;
+
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -45,7 +41,7 @@ public class AmmoDBOperations {
             while( tableNames.next())
             {
                 String tab = tableNames.getString( "TABLE_NAME");
-                System.out.println("TABLE NAMES: "+tab);
+
                 if(tab.equalsIgnoreCase(newTableName)) {
                     statement.executeUpdate("drop table "+newTableName);
                     
@@ -64,9 +60,7 @@ public class AmmoDBOperations {
                     + "2, '9x19', 'FMJ', 12, 0.3),"
                     + "("
                     + "3, '9x19', 'AP', 14, 0.3)";
-            
-            System.out.println(sqlInsert);
-            
+         
             statement.executeUpdate(sqlInsert);
 
         } catch (SQLException ex) {
@@ -89,7 +83,7 @@ public class AmmoDBOperations {
             while( tableNames.next())
             {
                 String tab = tableNames.getString( "TABLE_NAME");
-                System.out.println("TABLE NAMES: "+tab);
+//                System.out.println("TABLE NAMES: "+tab);
                 if(tab.equalsIgnoreCase(newTableName)) {
                     statement.executeUpdate("drop table "+newTableName);
                 }
@@ -109,9 +103,6 @@ public class AmmoDBOperations {
                     + "("
                     + "3, '5.45x39', 'AP', 21, 0.2)";
             statement.executeUpdate(sqlInsert);
-
-            //statement.close();
-            System.out.println("Table created");
 
         } catch (SQLException ex) {
             Logger.getLogger(AmmoDBManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -134,7 +125,7 @@ public class AmmoDBOperations {
             while( tableNames.next())
             {
                 String tab = tableNames.getString( "TABLE_NAME");
-                System.out.println("TABLE NAMES: "+tab);
+//                System.out.println("TABLE NAMES: "+tab);
                 if(tab.equalsIgnoreCase(newTableName)) {
                     statement.executeUpdate("drop table "+newTableName);
                     
@@ -155,8 +146,6 @@ public class AmmoDBOperations {
                     + "("
                     + "3, '7.62x51', 'AP', 80, 0.2)";
             statement.executeUpdate(sqlInsert);
-
-            //statement.close();
 
         } catch (SQLException ex) {
             Logger.getLogger(AmmoDBManager.class.getName()).log(Level.SEVERE, null, ex);

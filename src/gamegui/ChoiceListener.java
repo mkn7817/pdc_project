@@ -24,13 +24,13 @@ public class ChoiceListener implements ActionListener {
         
         switch(choice)
         {
-            case "choice1": ui.setMultiChoiceString("choice1"); System.out.println("choice1");
+            case "choice1": ui.setMultiChoiceString("choice1"); 
                 break;
-            case "choice2": ui.setMultiChoiceString("choice2"); System.out.println("choice2");
+            case "choice2": ui.setMultiChoiceString("choice2"); 
                 break;
-            case "choice3": ui.setMultiChoiceString("choice3"); System.out.println("choice3");
+            case "choice3": ui.setMultiChoiceString("choice3"); 
                 break;
-            case "confirm": ui.setTextFieldString(ui.textField.getText()); //System.out.println(ui.getTextFieldString()+"confirm button worked");
+            case "confirm": ui.setTextFieldString(ui.textField.getText()); 
                 break;
             case "item1": ui.setMultiChoiceString("item1");
                 break;
