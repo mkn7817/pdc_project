@@ -20,7 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * creates HashMap object of Ammunition
+ * creates HashMap object of Ammunition from created database
  */
 public class AmmunitionDBMap {
     
@@ -36,26 +36,19 @@ public class AmmunitionDBMap {
    
     public void getSmgAmmo() 
     {
-//        PreparedStatement pstmt;
         
         adbo.createTableSmg();
-        
         List<Ammunition> ammoList = new ArrayList<>();
         ResultSet rs = adbm.myQuery("select * from SMGAMMO");
         
-        
-        System.out.println(rs);
         try {
             while (rs.next()) {
-//                int id = rs.getInt(1);
                 String type = rs.getString(2);
                 String code = rs.getString(3);
                 int damage = rs.getInt(4);
                 double fragchance = rs.getDouble(5);
                 
-                System.out.println(type+" "+code+" "+damage+" "+fragchance+"");
-//                Ammunition ammo = new Ammunition(type, code, damage, fragchance);
-                
+                //input from database creating Ammunition objects into HashMap
                 ammoMap.put(code, new Ammunition(type, code, damage, fragchance));
             }
 
@@ -77,19 +70,14 @@ public class AmmunitionDBMap {
         List<Ammunition> ammoList = new ArrayList<>();
         ResultSet rs = adbm.myQuery("select * from ARAMMO");
 
-        
-        System.out.println(rs);
         try {
             while (rs.next()) {
-//                int id = rs.getInt(1);
                 String type = rs.getString(2);
                 String code = rs.getString(3);
                 int damage = rs.getInt(4);
                 double fragchance = rs.getDouble(5);
-                
-                System.out.println(type+" "+code+" "+damage+" "+fragchance+"");
-//                Ammunition ammo = new Ammunition(type, code, damage, fragchance);
-                
+
+                //input from database creating Ammunition objects into HashMap
                 ammoMap.put(code, new Ammunition(type, code, damage, fragchance));
             }
 
@@ -108,6 +96,7 @@ public class AmmunitionDBMap {
     
     public List<Ammunition> getSrAmmo() 
     {
+
         adbo.createTableSr();
         List<Ammunition> ammoList = new ArrayList<>();
         ResultSet rs = adbm.myQuery("select * from SRAMMO");

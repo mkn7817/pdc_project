@@ -29,7 +29,7 @@ public class BattleRecord {
     public void addToLog() throws FileNotFoundException
     {
         PrintWriter pw = new PrintWriter(new FileOutputStream("battle-stats.txt", true));
-        pw.append("Battles: "+Battle.count+" Damage taken: "+Battle.damageReceived+" Damage given: "+Battle.damageInflicted+" Player misses"+Battle.playerMisses+" Boss misses: "+Battle.aiMisses+" Weapon of choice: "+p.getWeaponName()+"\n");
+        pw.append("Battles: "+Battle.count+" Damage taken: "+Battle.damageReceived+" Damage given: "+Battle.damageInflicted+" Player misses: "+Battle.playerMisses+" Boss misses: "+Battle.aiMisses+" Weapon of choice: "+p.getWeaponName()+"\n");
         
         pw.close();
     }

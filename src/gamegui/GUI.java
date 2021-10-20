@@ -267,77 +267,7 @@ public class GUI {
         frame.setVisible(true);
     }
     
-    public void backgroundCustoms()
-    {
-        //remove old panel
-        frame.remove(woodsPanel);
-        
-        //JPanel for background image
-        customsPanel = new JPanel();
-        customsPanel.setBounds(40, 10, 700, 380);
-        customsPanel.setBackground(Color.red);
-        customsPanel.setLayout(null);
-        
-
-        //JLabel to place image upon
-        ImageIcon woodsImage = new ImageIcon("customs.png");
-        customsLabel = new JLabel();
-        customsLabel.setBounds(0, 0, 700, 380);
-        customsLabel.setIcon(woodsImage);
-        customsPanel.add(customsLabel);
-        
-        //add panel to frame as final step
-        frame.add(customsPanel);
-    }
-    
-    public void backgroundReserve()
-    {
-        //remove old panel
-        frame.remove(woodsPanel);
-        
-        //JPanel for background image
-        reservePanel = new JPanel();
-        reservePanel.setBounds(40, 10, 700, 380);
-        reservePanel.setBackground(Color.red);
-        reservePanel.setLayout(null);
-        
-
-        //JLabel to place image upon
-        ImageIcon woodsImage = new ImageIcon("reserve.png");
-        reserveLabel = new JLabel();
-        reserveLabel.setBounds(0, 0, 700, 380);
-        reserveLabel.setIcon(woodsImage);
-        reservePanel.add(reserveLabel);
-        
-        //add panel to frame as final step
-        frame.add(reservePanel);
-    }
-    
-    public void backgroundLab()
-    {
-        //remove old panel
-        frame.remove(woodsPanel);
-        frame.remove(customsPanel);
-//        frame.remove(reservePanel);
-        
-        //JPanel for background image
-        labPanel = new JPanel();
-        labPanel.setBounds(40, 10, 700, 380);
-        labPanel.setBackground(Color.red);
-        labPanel.setLayout(null);
-        
-
-        //JLabel to place image upon
-        ImageIcon woodsImage = new ImageIcon("lab.png");
-        labLabel = new JLabel();
-        labLabel.setBounds(0, 0, 700, 380);
-        labLabel.setIcon(woodsImage);
-        labPanel.add(labLabel);
-        
-        //add panel to frame as final step
-        frame.add(labPanel);
-    }
-    
+    //sets initial background upon start    
     public void backgroundStart()
     {
         startPanel = new JPanel();
@@ -355,6 +285,8 @@ public class GUI {
         
     }
     
+    
+    //getters and setters for attributes related to action listeners
     public void setReset(boolean b)
     {
         this.reset = b;

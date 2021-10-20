@@ -8,14 +8,19 @@
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/database/AmmoDBManager.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Characters/Player.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Items/Ammunition.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Gameplay/Battle.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/database/AmmunitionMap.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Items/HealItem.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Gameplay/BattleRecord.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Gameplay/GameSequence.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Characters/CreateCharacter.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/database/AmmoDBOperations.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/gamegui/GUI.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/gamegui/TestMain.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/database/AmmunitionDBMap.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/gamegui/TestMain.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/gamegui/GUI.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/gamegui/ChoiceListener.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Items/Weapon.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GameGUI/src/Items/AttackItem.java</file>
         </group>
     </open-files>
 </project-private>

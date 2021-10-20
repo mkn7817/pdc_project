@@ -15,6 +15,7 @@ public class AttackItem extends Item {
         this.attDmg = attDmg;
     }
     
+    //returns attDmg for item use in battle
     public int getAttDmg()
     {
         return this.attDmg;

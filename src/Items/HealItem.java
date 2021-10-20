@@ -21,16 +21,12 @@ public class HealItem extends Item {
         return str;
     }
 
-    /**
-     * @return the hpRecovery
-     */
+    //returns amount to recover HP in Battle
     public int getHpRecovery() {
         return hpRecovery;
     }
 
-    /**
-     * @param hpRecovery the hpRecovery to set
-     */
+    //set HP recovery amount
     public void setHpRecovery(int hpRecovery) {
         this.hpRecovery = hpRecovery;
     }

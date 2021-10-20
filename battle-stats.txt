@@ -1,0 +1,9 @@
+Battles: 3 Damage taken: 12 Damage given: 830 Player misses0 Boss misses: 2 Weapon of choice: AK-74M
+Battles: 3 Damage taken: 60 Damage given: 592 Player misses0 Boss misses: 1 Weapon of choice: AK-74M
+Battles: 3 Damage taken: 148 Damage given: 422 Player misses1 Boss misses: 2 Weapon of choice: AK-74M
+Battles: 3 Damage taken: 28 Damage given: 638 Player misses0 Boss misses: 3 Weapon of choice: AK-74M
+Battles: 3 Damage taken: 0 Damage given: 498 Player misses4 Boss misses: 4 Weapon of choice: 700 Remington
+Battles: 3 Damage taken: 12 Damage given: 564 Player misses0 Boss misses: 3 Weapon of choice: mp5
+Battles: 3 Damage taken: 98 Damage given: 602 Player misses0 Boss misses: 5 Weapon of choice: mp5
+Battles: 3 Damage taken: 70 Damage given: 684 Player misses: 0 Boss misses: 3 Weapon of choice: AK-74M
+Battles: 3 Damage taken: 114 Damage given: 430 Player misses: 0 Boss misses: 2 Weapon of choice: AK-74M

@@ -5,10 +5,15 @@
  */
 package database;
 
+import Items.Ammunition;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,10 +35,10 @@ public class AmmoDBOperations {
         try {
             
             Statement statement = adbm.getConnection().createStatement();
-            DatabaseMetaData metadata = null;
-            metadata = adbm.getConnection().getMetaData();
-            String[] names = { "TABLE"};
-            ResultSet tableNames = metadata.getTables( null, null, null, names);
+//            DatabaseMetaData metadata = null;
+            DatabaseMetaData metadata = adbm.getConnection().getMetaData();
+            String[] name = { "TABLE"};
+            ResultSet tableNames = metadata.getTables( null, null, null, name);
             
             String newTableName = "SMGAMMO";
             
@@ -47,9 +52,6 @@ public class AmmoDBOperations {
                 }
             }
             
-            
-            //deletes previous instance of table
-//            statement.executeUpdate("drop table "+newTableName);
             String sqlCreate = "create table " + newTableName + " (AMID int not null,"
                     + "AMCALIBER varchar(10), AMCLASS varchar(3),"
                     + "AMDAMAGE int,"
@@ -67,42 +69,33 @@ public class AmmoDBOperations {
             
             statement.executeUpdate(sqlInsert);
 
-//            String sqlUpdateTable = "update " + newTableName + " set price=15000 "
-//                    + "where brand='Toyota' and model='camry'";
-//            statement.executeUpdate(sqlUpdateTable);
-
-            //statement.close();
-            System.out.println("Table created");
-
         } catch (SQLException ex) {
             Logger.getLogger(AmmoDBManager.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-        //create table with ar ammo
+    //create table with ar ammo
     public void createTableAr() {
         try {
             
             Statement statement = adbm.getConnection().createStatement();
-            DatabaseMetaData metadata = null;
-            metadata = adbm.getConnection().getMetaData();
-            String[] names = { "TABLE"};
-            ResultSet tableNames = metadata.getTables( null, null, null, names);
+//            DatabaseMetaData metadata = null;
+            DatabaseMetaData metadata = adbm.getConnection().getMetaData();
+            String[] name = { "TABLE"};
+            ResultSet tableNames = metadata.getTables( null, null, null, name);
             String newTableName = "ARAMMO";
             
+            //checks if table name already exists, drops table if it does
             while( tableNames.next())
             {
                 String tab = tableNames.getString( "TABLE_NAME");
                 System.out.println("TABLE NAMES: "+tab);
                 if(tab.equalsIgnoreCase(newTableName)) {
                     statement.executeUpdate("drop table "+newTableName);
-                    
                 }
             }
             
-            //deletes previous instance of table
-//            statement.executeUpdate("drop table "+newTableName);
-
+            //build sql statement to create table
             String sqlCreate = "create table " + newTableName + " (AMID int not null,"
                     + "AMCALIBER varchar(10), AMCLASS varchar(3),"
                     + "AMDAMAGE int,"
@@ -117,10 +110,6 @@ public class AmmoDBOperations {
                     + "3, '5.45x39', 'AP', 21, 0.2)";
             statement.executeUpdate(sqlInsert);
 
-//            String sqlUpdateTable = "update " + newTableName + " set price=15000 "
-//                    + "where brand='Toyota' and model='camry'";
-//            statement.executeUpdate(sqlUpdateTable);
-
             //statement.close();
             System.out.println("Table created");
 
@@ -132,14 +121,16 @@ public class AmmoDBOperations {
     //create table with sr ammo
     public void createTableSr() {
         try {
-            Statement statement = adbm.getConnection().createStatement();
-            DatabaseMetaData metadata = null;
-            metadata = adbm.getConnection().getMetaData();
-            String[] names = { "TABLE"};
-            ResultSet tableNames = metadata.getTables( null, null, null, names);
             
+            Statement statement = adbm.getConnection().createStatement();
+//            DatabaseMetaData metadata = null;
+            DatabaseMetaData metadata = adbm.getConnection().getMetaData();
+            String[] name = { "TABLE"};
+            ResultSet tableNames = metadata.getTables( null, null, null, name);
+                        
             String newTableName = "SRAMMO";
             
+            //checks if table name already exists, drops table if it does
             while( tableNames.next())
             {
                 String tab = tableNames.getString( "TABLE_NAME");
@@ -149,9 +140,8 @@ public class AmmoDBOperations {
                     
                 }
             }
-            //deletes previous instance of table
-//            statement.executeUpdate("drop table "+newTableName);
-
+            
+            //build string for sql statement to create table
             String sqlCreate = "create table " + newTableName + " (AMID int not null,"
                     + "AMCALIBER varchar(10), AMCLASS varchar(3),"
                     + "AMDAMAGE int,"
@@ -166,46 +156,13 @@ public class AmmoDBOperations {
                     + "3, '7.62x51', 'AP', 80, 0.2)";
             statement.executeUpdate(sqlInsert);
 
-//            String sqlUpdateTable = "update " + newTableName + " set price=15000 "
-//                    + "where brand='Toyota' and model='camry'";
-//            statement.executeUpdate(sqlUpdateTable);
-
             //statement.close();
-            System.out.println("Table created");
 
         } catch (SQLException ex) {
             Logger.getLogger(AmmoDBManager.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-//        public void getQuery() {
-//        ResultSet rs = null;
-//
-//        try {
-//
-//            System.out.println(" getting query....");
-//            Statement statement = adbm.getConnection().createStatement(
-//                    ResultSet.TYPE_SCROLL_INSENSITIVE,
-//                    ResultSet.CONCUR_READ_ONLY);
-//
-//            String sqlQuery = "select * from smgammo";
-//
-////            rs = statement.executeQuery(sqlQuery);
-////            rs.beforeFirst();
-//            while (rs.next()) {
-//                String ammoid = rs.getInt(2)+""; // 1
-//                int damage = rs.getInt(2);
-//                System.out.println(model + ":  $" + price);
-//                
-//                int id = rs.getInt("AMMOID");
-//                String type = rs.getString("amcaliber");
-//                String code = rs.getString("amclass");
-//                int amdamage = rs.getInt(2);
-//                double fragchance = rs.getDouble("fragchance");
-//            }
-//
-//        } catch (SQLException ex) {
-//            Logger.getLogger(AmmoDBManager.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
+    
+    
 }

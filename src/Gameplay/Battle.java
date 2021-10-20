@@ -7,6 +7,8 @@ package Gameplay;
 import Characters.Boss;
 import Characters.Player;
 import Characters.PlayerBattle;
+import Items.AttackItem;
+import Items.HealItem;
 import Items.Item;
 import gamegui.GUI;
 import gamegui.GUIManager;
@@ -87,6 +89,7 @@ public class Battle {
             else if(ui.getMultiChoiceString().equals("choice2") && p.getNumItems() != 0)
             {
                 ArrayList<Item> bp = p.getBackpack();
+                Item i;
                 int itemIdex;
                 ui.setMultiChoiceString("");
                 ba.openBackpack();
@@ -95,8 +98,19 @@ public class Battle {
                 ba.clearButtonList();
 //                itemIndex = ui.itemButtonList.indexOf(ui.getMultiChoiceString());
                 System.out.println(ui.itemButtonList.indexOf(ui.getMultiChoiceString()));
+                i = p.getItem(ui.itemButtonList.indexOf(ui.getMultiChoiceString())+1);
                 System.out.println("TEST "+p.getItem(ui.itemButtonList.indexOf(ui.getMultiChoiceString())+1));
                 p.consumeItem(ui.itemButtonList.indexOf(ui.getMultiChoiceString())+1);
+                if(i instanceof HealItem)
+                {
+                    p.setHp(p.getCurrentHP()+((HealItem) i).getHpRecovery());
+                    if(p.getCurrentHP() > p.getMaxHP())
+                        p.setHp(p.getMaxHP());
+                }
+                if(i instanceof AttackItem)
+                {
+                    b.setHp(b.getCurrentHP() - ((AttackItem) i).getAttDmg());
+                }
                 
                 gm.toggleMultiChoice();
                 ui.itemPanel.setVisible(false);
@@ -105,7 +119,8 @@ public class Battle {
                 
                 ui.setMultiChoiceString("");
                 requestStop = true;
-                
+                gm.updatePlayerDetails(p);
+                gm.updateBossGUI(b.getName(), b.getCurrentHP());
             }
             else if(ui.getMultiChoiceString().equals("choice3"))
             {
@@ -215,19 +230,5 @@ public class Battle {
         gm.toggleBattleScreen();
 
     }
-   
-       
-//    public void run() {
-//        Battle battle = new Battle();
-//        gm.toggleBattleScreen();
-//        
-//        Thread p1 = new Thread();
-//        Thread b1 = new Thread();
-//        
-//        p1.start();
-//    }
-        
-    
-    
 
 }

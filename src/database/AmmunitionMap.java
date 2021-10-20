@@ -124,7 +124,6 @@ public class AmmunitionMap {
             
             ammoMap.put(ammoCode, new Ammunition(ammoType, ammoCode, ammoDmg, critical));
             }
-//            System.out.println(data);
             br.close();
     }
     

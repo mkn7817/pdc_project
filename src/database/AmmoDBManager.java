@@ -14,7 +14,7 @@ public class AmmoDBManager {
     private static final String USER_NAME = "pdc";
     private static final String PASSWORD = "pdc";
     
-    private static final String URL = "jdbc:derby:PDC;create=true";//localhost:1527/
+    private static final String URL = "jdbc:derby:PDC;create=true";
     
     Connection conn;
     
@@ -27,7 +27,7 @@ public class AmmoDBManager {
         if (this.conn == null) {
             try {
                 conn = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
-                //System.out.println(URL + "   CONNECTED....");
+
 
             } catch (SQLException ex) {
                 System.out.println(ex.getMessage());

@@ -50,7 +50,7 @@ public class GUIManager {
         ui.woodsLabel.setIcon(woodsImage);
         ui.woodsPanel.add(ui.woodsLabel);
         
-        //add panel to frame as final step
+        //add panel to frame
         ui.frame.add(ui.woodsPanel);
         ui.frame.repaint();
     }
@@ -60,7 +60,7 @@ public class GUIManager {
         ui.frame.remove(ui.woodsPanel);
     }
     
-    //display customs bacground
+    //display customs background
     public void displayCustoms()
     {
 
@@ -78,7 +78,7 @@ public class GUIManager {
         ui.customsLabel.setIcon(woodsImage);
         ui.customsPanel.add(ui.customsLabel);
         
-        //add panel to frame as final step
+        //add panel to frame
         ui.frame.add(ui.customsPanel);
     }
     
@@ -102,7 +102,7 @@ public class GUIManager {
         ui.reserveLabel.setIcon(woodsImage);
         ui.reservePanel.add(ui.reserveLabel);
         
-        //add panel to frame as final step
+        //add panel to frame
         ui.frame.add(ui.reservePanel);
         ui.frame.repaint();
     }
@@ -131,13 +131,7 @@ public class GUIManager {
         //add panel to frame as final step
         ui.frame.add(ui.labPanel);
     }
-    
-    //display lab background
-    public void displayLab()
-    {
-        ;
-    }
-    
+  
     //displays relevant panels to battle screen
     public void toggleBattleScreen()
     {
@@ -155,6 +149,7 @@ public class GUIManager {
         }
     }
     
+    //updates boss data into GUI display
     public void updateBossGUI(String name, int hp)
     {
         String hpS = hp+"";//convert hp to string first
@@ -162,6 +157,7 @@ public class GUIManager {
         ui.bossName.setText(name);
     }
     
+    //updates player details into GUI for display
     public void updatePlayerGUI(Player p)
     {
         ui.playerName.setText(p.getName());
@@ -246,13 +242,6 @@ public class GUIManager {
         
     }
     
-    public void refreshFrame()
-    {
-//        ui.battleBoss.repaint();
-        ui.bossHP.repaint();
-    }
-    
-    
     //displays battle commands
     public void displayBattleCommands()
     {
@@ -260,7 +249,5 @@ public class GUIManager {
         setMultiChoiceText("Attack", "Use Item", "Defend");
         System.out.println("TEST displayCommands()");
     }
-    
    
-    
 }

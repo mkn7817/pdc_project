@@ -68,8 +68,7 @@ public class BossList {
         {
         data.add(st.nextToken());
         }
-//            System.out.println(data);
-//                reader.close();
+
         }
         int i = 0;
                 for(i= i; i< data.size(); i ++){

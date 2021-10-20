@@ -57,19 +57,20 @@ public class GameSequence {
         while(guessFlag == true && guesses < 3)
             try{
                 
-//        numberGuessGui = Integer.parseInt(ui.getTextFieldString());
+        numberGuessGui = Integer.parseInt(ui.getTextFieldString());
         gm.getInputConfirm();
+        guesses++;
         try{
         numberGuessGui = Integer.parseInt(ui.getTextFieldString());
         } catch (NumberFormatException e)
         {
             ui.addToText("Please enter a valid number");
         }
-        if(numberGuessGui != numberGuessGui2)
-        {
-            guesses++;
-            numberGuessGui2 = numberGuessGui;
-        }
+//        if(numberGuessGui != numberGuessGui2)
+//        {
+//            guesses++;
+//            numberGuessGui2 = numberGuessGui;
+//        }
 
         numberGuess = numberGuessGui;
         if(numberGuess == 21)
@@ -84,132 +85,61 @@ public class GameSequence {
         else if(numberGuess != 21)
         {
             System.out.println("Sorry, your answer is incorrect1");
+            cont1 = true;
         }
         }catch(InputMismatchException e)
         {
             System.out.println("Sorry, your answer is incorrect2");
             guesses++;
         }
+        
         if(guesses > 3)
         {
             System.out.println("You have failed my test.");
+            ui.addToText("You have failed the test");
             guessFlag = false;
-            cont1 = true;
+            cont1 = false;
+            break;
         }
         
         }while(!cont1);
-
+        //continue prompt
+        ui.addToText("Enter any text and click confirm to continue");
+        boolean flag = true;
+        while(flag)
+        {
+            gm.getInputConfirm();
+            if(!ui.getTextFieldString().equals("")){
+                
+                flag = false;
+                System.out.println(flag+"flag");
+                ui.setTextFieldString("");
+            }
+        }
     }
     
     public static void woodsSecondPhase(Player p, GUI ui, GUIManager gm, AmmunitionDBMap am) throws IOException
     {
-//        Scanner scan = new Scanner(System.in);
+
+            
+            Scanner scan = new Scanner(System.in);
 //        int keypadAttempts = 0;
 //        boolean lockFlag = true;
 //        boolean cont = false;//continue condition first loop
-//        boolean cont2 = false;//continue condition second loop
+        boolean cont2 = false;//continue condition second loop
 //        int pChoice1 = 0;
 //        String pChoice2 = "";
-//        ui.setMultiChoiceString("0");
+        ui.setMultiChoiceString("0");
 //        int guiChoice = 0;
 //        int guiChoice2 = 0;
 //        int input;
-//        
-//        System.out.println(am.getAmmo(p.getAmmoCode()));
-//        
-//        System.out.println("You approach a wooden shack.");
-//        System.out.println("The Shack appears to be locked with a keypad.");
-//        System.out.println("On the wall next to the door there is a poster that reads \n16 06 68 XX XX 98");
-//        System.out.println("A note above the keypad says: solve the missing numbers \nand enter the 4 digit code in the keypad to enter");
-//        
-//        ui.textBox.setText("You approach a wooden shack.\nThe Shack appears to be locked with a keypad.\nOn the wall next to the door there is a poster that reads \n16 06 68 XX XX 98\nA note above the keypad says: solve the missing numbers \nand enter the 4 digit code in the keypad to enter\n");
-//        
-////        while(lockFlag && keypadAttempts < 3)
-////        {
-////        System.out.println("Please enter the correct 4 digit code and hit the enter key");
-////        do{
-//        ui.setTextFieldString("0");
-//        
-//        try{
-//            do{
-//        gm.getInputConfirm();
-//        guiChoice2 = Integer.parseInt(ui.getTextFieldString());
-//        System.out.println(guiChoice2);
-//        if(guiChoice != guiChoice2)
-//        {
-//            guiChoice = Integer.parseInt(ui.getTextFieldString());
-//            guiChoice2 = guiChoice;
-//            cont = true;
-////            System.out.println(guiChoice);
-////            System.out.println(guiChoice2);
-//        }
-//            }while(!cont);
-//        pChoice1 = guiChoice2;
-//        //reset conditions
-//        ui.setTextFieldString("0");
-//        ui.textField.setText("0");
-//        guiChoice = guiChoice2 = 0;
-//        
-//            
-//        }catch(InputMismatchException e)
-//        {
-//            pChoice1 = 0;
-//            System.out.println("Please enter a 4 digit code of integers");
-//            scan.next();
-//        }
-//        
-//            if(pChoice1 == 8788)
-//            {
-//                System.out.println("The door unlocks. Inside you find a pack of FMJ ammunition");
-//                System.out.println("Do you wish to switch to the FMJ ammunition?\n1. Yes\n2. No");
-//                ui.setTextFieldString("0");
-//                ui.textBox.setText("The door unlocks. Inside you find a pack of FMJ ammunition\nDo you wish to switch to the FMJ ammunition?\n1. Yes\n2. No");
-//                gm.toggleMultiChoice();
-//                gm.toggleTextField();
-//                gm.setMultiChoiceText("Yes", "No", "");
-//                ui.setMultiChoiceString("");
-//                
-//                while(!cont2)
-//                {
-//                    pChoice2 = ui.getMultiChoiceString();
-//                    System.out.print("");
-//                    if(ui.getMultiChoiceString().equals("choice1"))
-//                    {
-//                        p.setAmmo(am.getAmmo("FMJ"));
-//                        System.out.println(p.getAmmoCode());
-//                        gm.updatePlayerGUI(p);
-//                        cont2 = true;
-//                        break;
-//                    }
-//                    else if(ui.getMultiChoiceString().equals("choice2"))
-//                    {
-//                        cont2 = true;
-//                    }
-//                    
-//                }
-//                gm.updatePlayerDetails(p);
-//                
-////              ui.battlePlayer.repaint();
-////              System.out.println(p.getAmmoCode()+" "+p.getAmmoType());
-//    }
-            
-            Scanner scan = new Scanner(System.in);
-        int keypadAttempts = 0;
-        boolean lockFlag = true;
-        boolean cont = false;//continue condition first loop
-        boolean cont2 = false;//continue condition second loop
-        int pChoice1 = 0;
-        String pChoice2 = "";
-        ui.setMultiChoiceString("0");
-        int guiChoice = 0;
-        int guiChoice2 = 0;
-        int input;
         
         System.out.println(am.getAmmo(p.getAmmoCode()));
         
         ui.textBox.setText("You approach a wooden shack.\nThe Shack appears to be locked with a keypad.\nOn the wall next to the door there is a poster that reads \n16 06 68 XX XX 98\nA note above the keypad says: solve the missing numbers \nand enter the 4 digit code in the keypad to enter\n");
         
         gm.getInputConfirm();
+        
         
         if(ui.getTextFieldString().equalsIgnoreCase("8788"))
         {
@@ -224,7 +154,7 @@ public class GameSequence {
                 
             while(!cont2)
             {
-                pChoice2 = ui.getMultiChoiceString();
+//                pChoice2 = ui.getMultiChoiceString();
                 System.out.print("");
                 gm.getInput();
                 if(ui.getMultiChoiceString().equals("choice1"))
@@ -303,6 +233,7 @@ public class GameSequence {
             ui.addToText("There is a small explosion that deals some damage to you, however the door is now passable");
             System.out.println("There is a small explosion that deals some damage to you, however the door is now passable");
             p.setHp(p.getCurrentHP() - 50);
+            gm.updatePlayerDetails(p);
         }
         else if(ui.getMultiChoiceString().equals("choice2"))
         {
@@ -349,16 +280,7 @@ public class GameSequence {
         ui.addToText("Click confrim to continue");
         ui.setTextFieldString("");
         gm.getInputConfirm();
-        
-        
-//        System.out.println("You find an ammunition box outside the laboratory");
-//        int input = RunGame.readInput("Press 1 and hit enter to upgrade ammo, 2 to ignore", 2);
-//        if(input == 1)
-//        {
-//            p.setAmmo(aM.getAmmo("AP"));
-//        }
-//        RunGame.pressContinue();
-//        RunGame.clearConsole();
+
         System.out.println("Upon reaching the lab you are greated by the lab Boss");
         
         Battle ba4 = new Battle(p, b.getNextBoss(bossNumber), ui, gm);
@@ -395,6 +317,7 @@ public class GameSequence {
         ConsumableItems ci = new ConsumableItems();
         ci.populateFromText();
         
+        //create GUI, Listner and GUI manager objects
         ChoiceListener cl = new ChoiceListener();//listener class for UI interactions
         GUI ui = new GUI(cl);//GUI class takes in listener class
         cl.getUI(ui);

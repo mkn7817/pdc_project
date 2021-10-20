@@ -93,10 +93,10 @@ public class Player extends Character {
         return backpack.size();
     }
     
+    //return item based on index from backpack
     public Item getItem(int i)
     {
         return backpack.get(i);
-
     }
     
 

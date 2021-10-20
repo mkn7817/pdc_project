@@ -6,12 +6,11 @@ package Items;
 
 public class Weapon extends Item {
     /*
-    melee-one hit negates armour
-    smg-3 hits, low pen low dmg
-    assault 2 hits medium pen
-    sniper 1 hit hit pen high dmg
+    smg-3 hits low dmg
+    assault 2 hits medium dmg
+    sniper 1 hit high dmg
     */
-    private String weaponType;//"melee"(melee), "9x19"(smg), "5.56x45"(assault rifle), "7.62x51"(sniper rifle)
+    private String weaponType;//"9x19"(smg), "5.56x45"(assault rifle), "7.62x51"(sniper rifle)
     private String weaponCaliber;
     private int hitsPerTurn;
     private int baseDmg;
@@ -30,33 +29,40 @@ public class Weapon extends Item {
         this.weaponType = weaponType;
         this.baseDmg = baseDmg;
         this.hitsPerTurn = hitsPerTurn;
+        this.weaponCaliber = weaponCaliber;
     }
     
+    //add ammunition object to weapon
     public void addAmmunition(Ammunition ammo)
     {
         this.setAmmo(ammo);
     }
     
+    //returns ammunition object currently held by weapon
     public Ammunition getAmmunition()
     {
         return this.ammo;
     }
     
+    //returns type of Ammunition (caliber)
     public String getAmmoType()
     {
         return this.ammo.getAmmoType();
     }
     
+    //returns ammo code (HP, FMJ, AP)
     public String getAmmoCode()
     {
         return ammo.getAmmoCode();
     }
     
+    //remove ammunition object from weapon
     public void removeAmmo()
     {
         this.ammo = null;
     }
     
+    //returns number of hits per turn a weapon makes for battle
     public int getHitsPerTurn()
     {
         return this.hitsPerTurn;
@@ -73,6 +79,7 @@ public class Weapon extends Item {
 //        return "Weapon model: " + this.getName() + ", Base damage = " + getBaseDmg() + ", ammunition type = " + ammo;
     }
 
+    //returns damage as combination of weapon and ammunition objects
     public int attackDmg()
     {
         int attackDmg = 0;
@@ -81,14 +88,12 @@ public class Weapon extends Item {
         return attackDmg;
     }
 
-    
-    /**
-     * @return the weaponType
-     */
+    //returns weapon type
     public String getWeaponType() {
         return weaponType;
     }
     
+    //returns frag chance of Ammunition object
     public double getCriticalAmmo()
     {
         return ammo.getCritical();

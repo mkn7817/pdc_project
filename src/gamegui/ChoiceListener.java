@@ -44,8 +44,6 @@ public class ChoiceListener implements ActionListener {
                 break;
             case "item6": ui.setMultiChoiceString("item6");
                 break;
-            case "closebag": ui.setMultiChoiceString("closebag");
-                break;
             case "reset": ui.setReset(true);
                 break;
             
